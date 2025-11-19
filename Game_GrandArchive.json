@@ -1,0 +1,194 @@
+{
+  "name": "Grand Archive TCG",
+  "menuBackgroundImage": "https://api.gatcg.com/images/cards/grand-archive-banner.jpg",
+  "deckBuilding": {
+      "mainFilters": [
+          "element",
+          "type",
+          "class"
+      ],
+      "formats": [
+          {
+              "title": "Standard",
+              "gameplay": "Standard"
+          }
+      ]
+  },
+  "gameplay": {
+      "Standard": {
+          "mulligan": {
+              "startingHandSize": 7
+          },
+          "newTurn": {
+              "drawOnStart": true,
+              "sharedTurn": false,
+              "firstPlayerTokenName": "First Player",
+              "drawPerTurn": 1
+          },
+          "tokens": [
+              {
+                  "name": "First Player",
+                  "image": "https://api.gatcg.com/images/assets/first-player-token.png",
+                  "isUnique": true,
+                  "leavesAtEndOfTurn": false
+              }
+          ],
+          "countersStartingValues": [0],
+          "draggableTokens": [
+              {
+                  "id": "Durability",
+                  "name": "Durability Counter",
+                  "image": "https://api.gatcg.com/images/assets/durability.png"
+              },
+              {
+                  "id": "Buff",
+                  "name": "Buff Counter (+1/+1)",
+                  "image": "https://api.gatcg.com/images/assets/buff.png"
+              },
+              {
+                  "id": "Damage",
+                  "name": "Damage Counter",
+                  "image": "https://api.gatcg.com/images/assets/damage.png"
+              },
+              {
+                  "id": "Preparation",
+                  "name": "Preparation Counter",
+                  "image": "https://api.gatcg.com/images/assets/prep.png"
+              }
+          ],
+          "sections": {
+              "customSections": [
+                  "ChampionZone",
+                  "MemoryZone",
+                  "MaterialDeck",
+                  "MainBoard",
+                  "Graveyard",
+                  "Banishment"
+              ],
+              "layout": {
+                  "direction": "column",
+                  "content": [
+                      {
+                          "direction": "row",
+                          "isSymetricalForOpponents": true,
+                          "content": [
+                              {
+                                  "section": "MaterialDeck",
+                                  "style": {
+                                      "width": "12vh",
+                                      "borderImage": "url('https://valcur.github.io/TCG-Arena-Altered/Images/Assets/BorderBackground.png') 20 / 1.5vh"
+                                  }
+                              },
+                              {
+                                  "section": "ChampionZone",
+                                  "style": {
+                                      "width": "14vh",
+                                      "marginRight": "2vh",
+                                      "marginLeft": "2vh",
+                                      "marginTop": "auto",
+                                      "marginBottom": "auto"
+                                  }
+                              },
+                              {
+                                  "section": "MemoryZone",
+                                  "style": {
+                                      "width": "12vh",
+                                      "borderImage": "url('https://valcur.github.io/TCG-Arena-Altered/Images/Assets/BorderBackground.png') 20 / 1.5vh"
+                                  }
+                              }
+                          ]
+                      },
+                      {
+                          "direction": "row",
+                          "isSymetricalForOpponents": true,
+                          "content": [
+                              {
+                                  "section": "MainBoard",
+                                  "style": {
+                                      "width": "70vh",
+                                      "height": "25vh",
+                                      "borderImage": "url('https://valcur.github.io/TCG-Arena-Altered/Images/Assets/BorderBackground.png') 20 / 1.5vh"
+                                  }
+                              }
+                          ]
+                      }
+                  ]
+              },
+              "categoriesAlreadyOnBoard": ["Champion"],
+              "autoPlayFromHand": {
+                  "Item": "MainBoard",
+                  "Ally": "MainBoard",
+                  "Regalia": "MainBoard"
+              },
+              "autoPlayFromStack": {
+                  "Action": "Graveyard",
+                  "Attack": "Graveyard"
+              },
+              "sectionsDict": {
+                  "ChampionZone": {
+                      "title": "Champion",
+                      "isHidden": "no",
+                      "height": "18",
+                      "alignment": "CENTER",
+                      "isHorizontalAllowed": false,
+                      "noQuickActions": true
+                  },
+                  "MemoryZone": {
+                      "title": "Memory",
+                      "isHidden": "no",
+                      "height": "SMALL",
+                      "alignment": "CENTER",
+                      "isHorizontalAllowed": false,
+                      "displayedTitle": "Memory (Face Down)"
+                  },
+                  "MaterialDeck": {
+                      "title": "Material Deck",
+                      "isHidden": "yes",
+                      "height": "SMALL",
+                      "alignment": "CENTER",
+                      "isHorizontalAllowed": false,
+                      "displayedTitle": "Material Deck"
+                  },
+                  "MainBoard": {
+                      "title": "Field",
+                      "isHidden": "no",
+                      "height": "MEDIUM",
+                      "alignment": "CENTER",
+                      "isHorizontalAllowed": true,
+                      "cardActionShortcut": {
+                          "action": "MOVE",
+                          "actionData": {
+                              "destination": "Graveyard"
+                          },
+                          "image": "https://valcur.github.io/TCG-Arena-Altered/Images/Assets/support.png"
+                      }
+                  },
+                  "Graveyard": {
+                      "title": "Graveyard",
+                      "isHidden": "yes",
+                      "height": "SMALL",
+                      "alignment": "START"
+                  },
+                  "Banishment": {
+                      "title": "Banishment",
+                      "isHidden": "yes",
+                      "height": "SMALL",
+                      "alignment": "END"
+                  }
+              }
+          }
+      }
+  },
+  "defaultRessources": {
+      "backgrounds": [
+           "https://api.gatcg.com/images/assets/playmat-default.jpg"
+      ],
+      "decksUrl": ""
+  },
+  "customHelp": "Materialize: Drag a card from your Material Deck to the field.\nLevel Up: Place the new Level Champion card on top of your current Champion stack.\nMemory Cost: To pay for costs, move cards from your Hand to your Memory Zone (Face Down).",
+  "cards": {
+      "dataUrl": "", 
+      "cardBack": "https://api.gatcg.com/images/assets/card_back.jpg",
+      "cardBackColor": "#2d2d2d"
+  }
+}
